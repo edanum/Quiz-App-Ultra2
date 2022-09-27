@@ -1,0 +1,35 @@
+.nav{
+    background-color: var(--primary-color);
+    position: fixed;
+    color: white;
+    bottom: 0px;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    z-index: 1;
+}
+
+.navelements{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0px;
+    height: 53px;
+    margin: 0px;
+}
+
+.navelements li{
+    width: 100%;
+    height: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.navimage{
+    height: 70%;
+    
+}
