@@ -2,6 +2,9 @@ import "./App.css";
 import Header from "./components/header/Header";
 import Card from "./components/card/Card";
 import Nav from "./components/nav/Nav";
+import { useState } from "react";
+
+
 
 const cards = [
   {
@@ -33,17 +36,20 @@ const cards = [
 ];
 
 function App() {
+
+  const [navState, setNavState] = useState(1);
+
   return (
     <div className="App">
       <Header />
 
       <div className="cardcontainer">
         {cards.map(card => {
-          return <Card key={card.id} question={card.question} answer={card.answer} tags={card.tags} />
+          return <Card key={card.id} question={card.question} answer={card.answer} tags={card.tags}/>
         })}
         
       </div>
-      <Nav />
+      <Nav navState={navState} setNavState={setNavState} />
     </div>
   );
 }
