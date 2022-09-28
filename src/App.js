@@ -8,27 +8,27 @@ const cards = [
     id: 1,
     question: "Was ist die Quadratwurzel von -1?",
     answer: "i",
-    tags: ["Mathe", "tag2", "tag3"],
+    tags: ["Mathe"],
   },
   {
     id: 2,
     question: "Wer ist die Außenministerin von Deutschland?",
     answer: "Annalena Baerbock",
-    tags: ["Politik", "tag2", "tag3"],
+    tags: ["Politik"],
   },
 
   {
     id: 3,
     question: "Wie viel Bit sind ein Byte?",
     answer: "8",
-    tags: ["IT", "tag2", "tag3"],
+    tags: ["IT"],
   },
   {
     id: 4,
     question:
       "Wie hoch ist die höchste Welle, die jemals gesurft wurde (gerundet in ganzen Zahlen)?",
     answer: "26 Meter",
-    tags: ["Sport", "tag2", "tag3"],
+    tags: ["Sport"],
   },
 ];
 
