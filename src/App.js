@@ -39,7 +39,7 @@ function App() {
 
       <div className="cardcontainer">
         {cards.map(card => {
-          return <Card key={card.id} question={card.question} tags={card.tags} />
+          return <Card key={card.id} question={card.question} answer={card.answer} tags={card.tags} />
         })}
         
       </div>

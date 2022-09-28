@@ -49,9 +49,6 @@
 }
 
 .card__answer {
+  display: block;
   background-color: rgb(62, 188, 66);
-}
-
-.hidden {
-  display: none;
 }
