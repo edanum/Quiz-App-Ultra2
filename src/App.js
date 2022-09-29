@@ -45,23 +45,35 @@ function App() {
   const [navState, setNavState] = useState(1);
   const [cardsState, setCardsState] = useState(cards);
 
-  const appendCard = (question,answer,tag) => {
+  function appendCard(question, answer, tag) {
     setCardsState([
+      {
+        id: nanoid(),
+        question: question,
+        answer: answer,
+        tags: [tag],
+        isBookmarked: false,
+      },
       ...cards,
-      { id: nanoid(), question: question, answer: answer, tags: [tag], isBookmarked: false },
     ]);
-  };
+  }
 
-  
+  const deleteCard = (cardId) => {
+    return "";
+  };
 
   return (
     <div className="App">
       <Header />
 
       {navState === 1 || navState === 2 ? (
-        <Cards navState={navState} cardsState={cardsState} />
+        <Cards
+          navState={navState}
+          cardsState={cardsState}
+          deleteCard={deleteCard}
+        />
       ) : navState === 3 ? (
-          <Create appendCard={appendCard} navState={setNavState} />
+        <Create appendCard={appendCard} setNavState={setNavState} />
       ) : navState === 4 ? (
         <Profile />
       ) : (

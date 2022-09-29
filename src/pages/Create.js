@@ -1,21 +1,23 @@
 import "./Create.css";
 
-export default function Create(appendCard, setNavState) {
+export default function Create({ appendCard, setNavState }) {
   const handleSubmit = (event) => {
     event.preventDefault();
-    const form = event.target; // Grab form Data
-    console.log(form.elements);
-    const { question, answer, tag } = form.elements; // deconstructure data
+    const data = new FormData(event.target); //Grab data
+    const values = Object.fromEntries(data); //Grab data
 
-    appendCard(question.value, answer.value, tag.value); // create Card in App.js
-    form.reset(); // Reset Form
+    console.log(values);
+    const { question, answer, tag } = values; // deconstructure data
+
+    appendCard(question, answer, tag); // create Card in App.js
+    event.target.reset(); // Reset Form
     setNavState(1); // Go back to Home
-    return console.log("sumbit works");
+    console.log("sumbit works");
   };
 
   return (
-    <form className="form">
-      <label for="question">Your question:</label>
+    <form onSubmit={handleSubmit} className="form">
+      <label forHTML="question">Your question:</label>
       <textarea
         name="question"
         id="question"
@@ -25,7 +27,7 @@ export default function Create(appendCard, setNavState) {
       ></textarea>
 
       <p className="textcounter"></p>
-      <label for="question">Your answer:</label>
+      <label forHTML="question">Your answer:</label>
       <textarea
         name="answer"
         id="answer"
@@ -34,12 +36,10 @@ export default function Create(appendCard, setNavState) {
         maxLength="150"
       ></textarea>
       <p className="textcounter"></p>
-      <label for="tag">Tag:</label>
+      <label forHTML="tag">Tag:</label>
       <textarea name="tag" id="question" rows="2" cols="20"></textarea>
       <br />
-      <button onClick={handleSubmit} type="submit">
-        Hinzufügen
-      </button>
+      <button type="submit">Hinzufügen</button>
     </form>
   );
 }

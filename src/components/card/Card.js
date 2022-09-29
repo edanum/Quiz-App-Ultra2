@@ -3,7 +3,7 @@ import bookmarkLogoUnfilled from "../../images/bookmark-icon-black.png";
 import bookmarkLogoFilled from "../../images/bookmark-icon-filled.png";
 import { useState } from "react";
 
-function Card({ question, answer, tags, isBookmarked }) {
+function Card({ cardId, question, answer, tags, isBookmarked , deleteCard}) {
   const [answerIsVisible, setVisibility] = useState(false);
 
   const handleToggleAnswer = () => {
@@ -29,7 +29,7 @@ function Card({ question, answer, tags, isBookmarked }) {
        <button
         className="card__answer-button"
         data-js="answer-button"
-        onClick={handleToggleAnswer}
+        onClick={deleteCard}
       >Delete Card</button>
 
       {answerIsVisible === true ? (

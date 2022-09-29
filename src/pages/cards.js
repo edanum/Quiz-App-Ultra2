@@ -1,6 +1,6 @@
 import Card from "../components/card/Card";
 
-export default function cards({ navState,cardsState }) {
+export default function cards({ navState, cardsState, deleteCard }) {
   return (
     <div className="cardcontainer">
       {cardsState.map((card) => {
@@ -12,6 +12,7 @@ export default function cards({ navState,cardsState }) {
               answer={card.answer}
               tags={card.tags}
               isBookmarked={card.isBookmarked}
+              deleteCards={deleteCard}
             />
           ) : (
             ""
@@ -23,6 +24,7 @@ export default function cards({ navState,cardsState }) {
             answer={card.answer}
             tags={card.tags}
             isBookmarked={card.isBookmarked}
+            deleteCards={deleteCard}
           />
         );
       })}
