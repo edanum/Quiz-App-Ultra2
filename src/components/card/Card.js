@@ -26,6 +26,11 @@ function Card({ question, answer, tags, isBookmarked }) {
       >
         {answerIsVisible === false ? "Show answer" : "Hide answer"}
       </button>
+       <button
+        className="card__answer-button"
+        data-js="answer-button"
+        onClick={handleToggleAnswer}
+      >Delete Card</button>
 
       {answerIsVisible === true ? (
         <div className="card__question" data-js="answer">

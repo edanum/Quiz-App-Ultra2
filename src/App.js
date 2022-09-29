@@ -5,8 +5,8 @@ import Nav from "./components/nav/Nav";
 import { useState } from "react";
 import Cards from "./pages/cards";
 import Create from "./pages/Create";
-import Profile from "./pages/Profile"
-
+import Profile from "./pages/Profile";
+import { nanoid } from "nanoid";
 
 const cards = [
   {
@@ -42,18 +42,31 @@ const cards = [
 ];
 
 function App() {
-
   const [navState, setNavState] = useState(1);
+  const [cardsState, setCardsState] = useState(cards);
+
+  const appendCard = (question,answer,tag) => {
+    setCardsState([
+      ...cards,
+      { id: nanoid(), question: question, answer: answer, tags: [tag], isBookmarked: false },
+    ]);
+  };
+
+  
 
   return (
     <div className="App">
       <Header />
 
-      
-      {navState === 1 || navState === 2 ? <Cards cards={cards} navState={navState} /> : navState===3 ? <Create/> : navState===4 ? <Profile/> : "" }
-      
-   
-
+      {navState === 1 || navState === 2 ? (
+        <Cards navState={navState} cardsState={cardsState} />
+      ) : navState === 3 ? (
+          <Create appendCard={appendCard} navState={setNavState} />
+      ) : navState === 4 ? (
+        <Profile />
+      ) : (
+        ""
+      )}
 
       <Nav navState={navState} setNavState={setNavState} />
     </div>

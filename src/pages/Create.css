@@ -1,0 +1,11 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  width: 80;
+}
+
+.textcounter{
+font-size: 14px;
+font-style: italic;
+}
