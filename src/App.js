@@ -55,11 +55,11 @@ function App() {
         isBookmarked: false,
       },
       ...cards,
-    ]);
+    ]); 
   }
 
   const deleteCard = (cardId) => {
-    return "";
+    return {cardId};
   };
 
   return (

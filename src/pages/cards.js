@@ -12,7 +12,7 @@ export default function cards({ navState, cardsState, deleteCard }) {
               answer={card.answer}
               tags={card.tags}
               isBookmarked={card.isBookmarked}
-              deleteCards={deleteCard}
+              deleteCard={deleteCard}
             />
           ) : (
             ""
